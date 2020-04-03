@@ -42,6 +42,7 @@ set(coremediaio-dal_HEADERS
     include/CAException.h
     include/CAGuard.h
     include/CAHostTimeBase.h
+    include/CALogMacros.h
     include/CAMutex.h
     include/CAPThread.h
     include/CAProcess.h
@@ -49,10 +50,12 @@ set(coremediaio-dal_HEADERS
     include/CAVolumeCurve.h
     include/CMIODebugMacros.h
     include/CMIODebugPrintf.h
+    include/CMIO_Buffer.h
     include/CMIO_CMA_BlockBuffer.h
     include/CMIO_CMA_FormatDescription.h
     include/CMIO_CMA_SampleBuffer.h
     include/CMIO_CMA_SimpleQueue.h
+    include/CMIO_CMA_Time.h
     include/CMIO_CVA_Buffer.h
     include/CMIO_CVA_Image_Buffer.h
     include/CMIO_CVA_Pixel_Buffer.h
