@@ -23,131 +23,164 @@ include_directories(${AVFOUNDATION}
                     ${COREMEDIAIO}
                     ${COCOA}
                     ${IOSURFACE}
-                    include)
+                    src/CoreAudio
+                    src/CoreMediaIO
+                    src/CoreMediaIO/DeviceAbstractionLayer/CoreMediaAssistant
+                    src/CoreMediaIO/DeviceAbstractionLayer/CoreVideoAssistant
+                    src/CoreMediaIO/DeviceAbstractionLayer/DalAssistant
+                    src/CoreMediaIO/DeviceAbstractionLayer/Device
+                    src/CoreMediaIO/DeviceAbstractionLayer/Device/IOVideo
+                    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property
+                    src/CoreMediaIO/DeviceAbstractionLayer/IOKitAssistant
+                    src/CoreMediaIO/DeviceAbstractionLayer/IOStreamAssistant
+                    src/CoreMediaIO/DeviceAbstractionLayer/IOVideoAssistant
+                    src/CoreMediaIO/DeviceAbstractionLayer/POSIXThreadAssistant)
 
 set(coremediaio-dal_HEADERS
-    include/CAAudioValueRange.h
-    include/CAAutoDisposer.h
-    include/CACFArray.h
-    include/CACFData.h
-    include/CACFDictionary.h
-    include/CACFDistributedNotification.h
-    include/CACFMachPort.h
-    include/CACFNumber.h
-    include/CACFObject.h
-    include/CACFPreferences.h
-    include/CACFString.h
-    include/CADebugMacros.h
-    include/CADebugPrintf.h
-    include/CAException.h
-    include/CAGuard.h
-    include/CAHostTimeBase.h
-    include/CALogMacros.h
-    include/CAMutex.h
-    include/CAPThread.h
-    include/CAProcess.h
-    include/CATokenMap.h
-    include/CAVolumeCurve.h
-    include/CMIODebugMacros.h
-    include/CMIODebugPrintf.h
-    include/CMIO_Buffer.h
-    include/CMIO_CMA_BlockBuffer.h
-    include/CMIO_CMA_FormatDescription.h
-    include/CMIO_CMA_SampleBuffer.h
-    include/CMIO_CMA_SimpleQueue.h
-    include/CMIO_CMA_Time.h
-    include/CMIO_CVA_Buffer.h
-    include/CMIO_CVA_Image_Buffer.h
-    include/CMIO_CVA_Pixel_Buffer.h
-    include/CMIO_DALA_System.h
-    include/CMIO_DP_Command.h
-    include/CMIO_DP_Control.h
-    include/CMIO_DP_ControlDictionary.h
-    include/CMIO_DP_Device.h
-    include/CMIO_DP_DeviceCommands.h
-    include/CMIO_DP_DeviceSettings.h
-    include/CMIO_DP_IOV_Control.h
-    include/CMIO_DP_IOV_ControlDictionary.h
-    include/CMIO_DP_Object.h
-    include/CMIO_DP_PlugIn.h
-    include/CMIO_DP_Property_Base.h
-    include/CMIO_DP_Property_ClientSyncDiscontinuity.h
-    include/CMIO_DP_Property_Clock.h
-    include/CMIO_DP_Property_Deck.h
-    include/CMIO_DP_Property_DeviceMaster.h
-    include/CMIO_DP_Property_EndOfData.h
-    include/CMIO_DP_Property_FirstOutputPresentationTimeStamp.h
-    include/CMIO_DP_Property_FormatList.h
-    include/CMIO_DP_Property_HogMode.h
-    include/CMIO_DP_Property_NoData.h
-    include/CMIO_DP_Property_OutputBuffers.h
-    include/CMIO_DP_Property_SMPTETimeCallback.h
-    include/CMIO_DP_Property_ScheduledOutputNotificationProc.h
-    include/CMIO_DP_Property_SuspendedByUser.h
-    include/CMIO_DP_Stream.h
-    include/CMIO_DP_UserInfo.h
-    include/CMIO_IOKA_NotificationPort.h
-    include/CMIO_IOKA_Object.h
-    include/CMIO_IOSA_Assistance.h
-    include/CMIO_IOVA_Assistance.h
-    include/CMIO_PTA_Assistance.h
-    include/CMIO_PTA_CFMachPortThread.h
-    include/CMIO_PTA_NotificationPortThread.h
-    include/CMIO_PropertyAddress.h
-    include/CMIO_SA_Assistance.h
-    include/CMIO_SMPTETimeBase.h)
+    src/CoreAudio/CAAudioValueRange.h
+    src/CoreAudio/CAAutoDisposer.h
+    src/CoreAudio/CACFArray.h
+    src/CoreAudio/CACFData.h
+    src/CoreAudio/CACFDictionary.h
+    src/CoreAudio/CACFDistributedNotification.h
+    src/CoreAudio/CACFMachPort.h
+    src/CoreAudio/CACFNumber.h
+    src/CoreAudio/CACFObject.h
+    src/CoreAudio/CACFPreferences.h
+    src/CoreAudio/CACFString.h
+    src/CoreAudio/CADebugMacros.h
+    src/CoreAudio/CADebugPrintf.h
+    src/CoreAudio/CAException.h
+    src/CoreAudio/CAGuard.h
+    src/CoreAudio/CAHostTimeBase.h
+    src/CoreAudio/CALogMacros.h
+    src/CoreAudio/CAMutex.h
+    src/CoreAudio/CAPThread.h
+    src/CoreAudio/CAProcess.h
+    src/CoreAudio/CATokenMap.h
+    src/CoreAudio/CAVolumeCurve.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreMediaAssistant/CMIO_CMA_BlockBuffer.h
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreMediaAssistant/CMIO_CMA_FormatDescription.h
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreMediaAssistant/CMIO_CMA_SampleBuffer.h
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreMediaAssistant/CMIO_CMA_SimpleQueue.h
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreMediaAssistant/CMIO_CMA_Time.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreVideoAssistant/CMIO_CVA_Buffer.h
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreVideoAssistant/CMIO_CVA_Image_Buffer.h
+    src/CoreMediaIO/DeviceAbstractionLayer/CoreVideoAssistant/CMIO_CVA_Pixel_Buffer.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/DalAssistant/CMIO_DALA_System.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Command.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Control.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_ControlDictionary.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Device.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_DeviceCommands.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_DeviceSettings.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Object.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_PlugIn.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Stream.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_UserInfo.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/IOVideo/CMIO_DP_IOV_Control.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/IOVideo/CMIO_DP_IOV_ControlDictionary.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_Base.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_ClientSyncDiscontinuity.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_Clock.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_Deck.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_DeviceMaster.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_EndOfData.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_FirstOutputPresentationTimeStamp.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_FormatList.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_HogMode.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_NoData.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_OutputBuffers.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_SMPTETimeCallback.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_ScheduledOutputNotificationProc.h
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_SuspendedByUser.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOKitAssistant/CMIO_IOKA_NotificationPort.h
+    src/CoreMediaIO/DeviceAbstractionLayer/IOKitAssistant/CMIO_IOKA_Object.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOStreamAssistant/CMIO_IOSA_Assistance.h
+   
+    src/CoreMediaIO/DeviceAbstractionLayer/IOVideoAssistant/CMIO_IOVA_Assistance.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/POSIXThreadAssistant/CMIO_PTA_Assistance.h
+    src/CoreMediaIO/DeviceAbstractionLayer/POSIXThreadAssistant/CMIO_PTA_CFMachPortThread.h
+    src/CoreMediaIO/DeviceAbstractionLayer/POSIXThreadAssistant/CMIO_PTA_NotificationPortThread.h
+
+    src/CoreMediaIO/CMIODebugMacros.h
+    src/CoreMediaIO/CMIODebugPrintf.h
+    src/CoreMediaIO/CMIO_Buffer.h
+    src/CoreMediaIO/CMIO_PropertyAddress.h
+    src/CoreMediaIO/CMIO_SMPTETimeBase.h
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOSurfaceAssistant/CMIO_SA_Assistance.h)
 
 set(coremediaio-dal_SOURCES
-    src/CACFArray.cpp
-    src/CACFDictionary.cpp
-    src/CACFDistributedNotification.cpp
-    src/CACFMachPort.cpp
-    src/CACFNumber.cpp
-    src/CACFPreferences.cpp
-    src/CACFString.cpp
-    src/CAGuard.cpp
-    src/CAHostTimeBase.cpp
-    src/CAMutex.cpp
-    src/CAPThread.cpp
-    src/CAProcess.cpp
-    src/CAVolumeCurve.cpp
-    src/CMIO_DP_Command.cpp
-    src/CMIO_DP_Control.cpp
-    src/CMIO_DP_ControlDictionary.cpp
-    src/CMIO_DP_Device.cpp
-    src/CMIO_DP_DeviceCommands.cpp
-    src/CMIO_DP_DeviceSettings.cpp
-    src/CMIO_DP_HardwarePlugInInterface.cpp
-    src/CMIO_DP_Object.cpp
-    src/CMIO_DP_PlugIn.cpp
-    src/CMIO_DP_Stream.cpp
-    src/CMIO_DP_UserInfo.cpp
-    src/CMIO_DP_Property_Base.cpp
-    src/CMIO_DP_Property_ClientSyncDiscontinuity.cpp
-    src/CMIO_DP_Property_Clock.cpp
-    src/CMIO_DP_Property_Deck.cpp
-    src/CMIO_DP_Property_DeviceMaster.cpp
-    src/CMIO_DP_Property_EndOfData.cpp
-    src/CMIO_DP_Property_FirstOutputPresentationTimeStamp.cpp
-    src/CMIO_DP_Property_FormatList.cpp
-    src/CMIO_DP_Property_HogMode.cpp
-    src/CMIO_DP_Property_NoData.cpp
-    src/CMIO_DP_Property_OutputBuffers.cpp
-    src/CMIO_DP_Property_SMPTETimeCallback.cpp
-    src/CMIO_DP_Property_ScheduledOutputNotificationProc.cpp
-    src/CMIO_DP_Property_SuspendedByUser.cpp
-    src/CMIO_DP_IOV_Control.cpp
-    src/CMIO_DP_IOV_ControlDictionary.cpp
-    src/CMIODebugMacros.cpp
-    src/CMIODebugPrintf.cpp
-    src/CMIO_SMPTETimeBase.cpp
-    src/CMIO_DALA_System.cpp
-    src/CMIO_IOKA_NotificationPort.cpp
-    src/CMIO_IOSA_Assistance.cpp
-    src/CMIO_SA_Assistance.cpp
-    src/CMIO_IOVA_Assistance.cpp
-    src/CMIO_PTA_CFMachPortThread.cpp
-    src/CMIO_PTA_NotificationPortThread.cpp)
+    src/CoreAudio/CACFArray.cpp
+    src/CoreAudio/CACFDictionary.cpp
+    src/CoreAudio/CACFDistributedNotification.cpp
+    src/CoreAudio/CACFMachPort.cpp
+    src/CoreAudio/CACFNumber.cpp
+    src/CoreAudio/CACFPreferences.cpp
+    src/CoreAudio/CACFString.cpp
+    src/CoreAudio/CAGuard.cpp
+    src/CoreAudio/CAHostTimeBase.cpp
+    src/CoreAudio/CAMutex.cpp
+    src/CoreAudio/CAPThread.cpp
+    src/CoreAudio/CAProcess.cpp
+    src/CoreAudio/CAVolumeCurve.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Command.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Control.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_ControlDictionary.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Device.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_DeviceCommands.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_DeviceSettings.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_HardwarePlugInInterface.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Object.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_PlugIn.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_Stream.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/CMIO_DP_UserInfo.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_Base.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_ClientSyncDiscontinuity.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_Clock.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_Deck.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_DeviceMaster.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_EndOfData.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_FirstOutputPresentationTimeStamp.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_FormatList.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_HogMode.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_NoData.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_OutputBuffers.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_SMPTETimeCallback.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_ScheduledOutputNotificationProc.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/Property/CMIO_DP_Property_SuspendedByUser.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/IOVideo/CMIO_DP_IOV_Control.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/Device/IOVideo/CMIO_DP_IOV_ControlDictionary.cpp
+
+    src/CoremediaIO/CMIODebugMacros.cpp
+    src/CoremediaIO/CMIODebugPrintf.cpp
+    src/CoremediaIO/CMIO_SMPTETimeBase.cpp
+
+    src/CoremediaIO/DeviceAbstractionLayer/DALAssistant/CMIO_DALA_System.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOKitAssistant/CMIO_IOKA_NotificationPort.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOStreamAssistant/CMIO_IOSA_Assistance.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOSurfaceAssistant/CMIO_SA_Assistance.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/IOVideoAssistant/CMIO_IOVA_Assistance.cpp
+
+    src/CoreMediaIO/DeviceAbstractionLayer/POSIXThreadAssistant/CMIO_PTA_CFMachPortThread.cpp
+    src/CoreMediaIO/DeviceAbstractionLayer/POSIXThreadAssistant/CMIO_PTA_NotificationPortThread.cpp)
 
 add_library(coremediaio-dal SHARED
     ${coremediaio-dal_SOURCES}
