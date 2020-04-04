@@ -1,0 +1,6 @@
+language: cpp
+script: mkdir build && cd build && cmake .. && make
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode11.3
